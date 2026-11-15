@@ -284,3 +284,6 @@ img, svg { display: block; max-width: 100%; }
 @media (pointer: coarse) {
   .btn, .tile, .seg button, .mark { -webkit-touch-callout: none; }
 }
+
+/* Narrow computer windows: the Ration cases keep only their name */
+@media (max-width: 1100px) { .ration .unit-name span:last-child { display: none; } }
