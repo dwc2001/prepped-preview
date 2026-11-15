@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Prepped. Hopefully never. Ready always.</title>
+<meta name="description" content="Two weeks of food, water and supplies for everyone in your home, packed in one set of cases.">
+<meta name="theme-color" content="#F3F0E8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#11130F" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="home.css">
+<script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="index.html" aria-label="Prepped. home">Prepped<span class="stop">.</span></a>
+    <nav class="bar-links" aria-label="Main">
+      <a href="#inside">The pack</a>
+      <a href="#modules">Modules</a>
+      <a href="#sizes">Sizes</a>
+      <a class="btn btn-main btn-small" href="build.html">Build your pack</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- 1. The promise -->
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div class="hero-words">
+        <h1 class="h1">Hopefully never.<br>Ready always<span class="stop">.</span></h1>
+        <p class="lead">Two weeks of food, water and supplies for everyone in your home, packed in one set of cases. Put it on a shelf. Get on with your life.</p>
+        <div class="hero-go">
+          <a class="btn btn-main" href="build.html">Build your pack</a>
+          <a class="btn btn-quiet" href="#inside">See what is inside</a>
+        </div>
+        <p class="small">From <span class="num">$895</span>. Sizes for one to four people.</p>
+      </div>
+
+      <figure class="stack" aria-label="A Prepped. pack for four people: one Core case with four Ration cases stacked on top">
+        <div class="stack-pair">
+          <div class="box"><i class="latch"></i><span class="box-name">Ration 3</span></div>
+          <div class="box"><i class="latch"></i><span class="box-name">Ration 4</span></div>
+        </div>
+        <div class="stack-pair">
+          <div class="box"><i class="latch"></i><span class="box-name">Ration 1</span></div>
+          <div class="box"><i class="latch"></i><span class="box-name">Ration 2</span></div>
+        </div>
+        <div class="box box-core">
+          <i class="grip"></i><i class="latch"></i><i class="latch latch-2"></i>
+          <span class="box-name box-mark">Prepped<span class="box-stop">.</span></span>
+          <span class="box-note">Core</span>
+        </div>
+        <div class="shelf"></div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 2. The idea -->
+  <section class="section">
+    <div class="wrap idea">
+      <p class="idea-list h2" aria-label="Smoke alarm. Fire extinguisher. Prepped.">
+        <span>Smoke alarm.</span>
+        <span>Fire extinguisher.</span>
+        <span class="idea-us">Prepped<span class="stop">.</span></span>
+      </p>
+      <div class="idea-words reveal">
+        <p class="lead">Most homes have the first two and never use them. That is the point.</p>
+        <p class="body">Prepped. is the third. Everything your household needs to sit out two weeks without power, running water or an open shop, already chosen, already packed, already on the shelf.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. What is inside -->
+  <section class="section" id="inside">
+    <div class="wrap">
+      <div class="section-head inside-head">
+        <div class="inside-title">
+          <h2 class="h2">Everything, already packed<span class="stop">.</span></h2>
+          <p class="lead">One Core for the household. One Ration case for each person.</p>
+        </div>
+        <div class="people">
+          <span class="small" id="people-label">People at home</span>
+          <div class="seg" id="people" data-value="2" role="group" aria-labelledby="people-label">
+            <span class="seg-thumb" aria-hidden="true"></span>
+            <button type="button" aria-pressed="false" data-people="1">1</button>
+            <button type="button" aria-pressed="true" data-people="2">2</button>
+            <button type="button" aria-pressed="false" data-people="3">3</button>
+            <button type="button" aria-pressed="false" data-people="4">4</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="pack"></div>
+
+      <div class="inside-panel" id="inside-panel" aria-live="polite">
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Why two weeks -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="h2">Two weeks, counted<span class="stop">.</span></h2>
+      </div>
+      <dl class="facts">
+        <div class="fact reveal">
+          <dt class="h2 num">14 days</dt>
+          <dd class="lead">of meals for every person, at 2,100 calories a day. Three meals, a snack and a hot drink, every day.</dd>
+        </div>
+        <div class="fact reveal">
+          <dt class="h2 num">25 years</dt>
+          <dd class="lead">of shelf life on every meal. Nothing to rotate, nothing to remember.</dd>
+        </div>
+        <div class="fact reveal">
+          <dt class="h2 num">11 hours</dt>
+          <dd class="lead">is how long the average American home went without power in 2024, the most in ten years. Most outages are short. A few are not.
+            <span class="small fact-source">US Energy Information Administration, 2025</span></dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 5. Modules -->
+  <section class="section" id="modules">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="h2">Add what your home needs<span class="stop">.</span></h2>
+        <p class="lead">The pack is complete as it comes. Modules are for the things only you know about: the dog, the well pump, the cabin an hour out.</p>
+      </div>
+      <ul class="rows" id="addon-rows"></ul>
+      <p class="after-rows"><a class="btn btn-quiet" href="build.html">Add modules to a pack</a></p>
+    </div>
+  </section>
+
+  <!-- 6. It looks after itself -->
+  <section class="section">
+    <div class="wrap keep">
+      <div class="section-head">
+        <h2 class="h2">It looks after itself<span class="stop">.</span></h2>
+        <p class="lead">We keep the dates. When something in your pack nears the end of its life, the replacement arrives with a return label.</p>
+      </div>
+      <ul class="life" aria-label="How long each part of the pack lasts before we replace it">
+        <li class="reveal"><span class="life-name">Medicines</span><span class="life-bar" style="--y: 3"></span><span class="life-years num">3 years</span></li>
+        <li class="reveal"><span class="life-name">Sealed water</span><span class="life-bar" style="--y: 5"></span><span class="life-years num">5 years</span></li>
+        <li class="reveal"><span class="life-name">Batteries</span><span class="life-bar" style="--y: 10"></span><span class="life-years num">10 years</span></li>
+        <li class="reveal"><span class="life-name">Meals</span><span class="life-bar" style="--y: 25"></span><span class="life-years num">25 years</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 7. Sizes -->
+  <section class="section" id="sizes">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="h2">One pack. Four sizes<span class="stop">.</span></h2>
+      </div>
+      <ul class="rows" id="size-rows"></ul>
+    </div>
+  </section>
+
+  <!-- 8. Straight answers -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="h2">Straight answers<span class="stop">.</span></h2>
+      </div>
+      <dl class="answers">
+        <div class="reveal">
+          <dt class="h3">Where does it live?</dt>
+          <dd class="body">Anywhere indoors and dry. A basement shelf, the hall closet, under the stairs. The cases stack on a footprint the size of a storage tote.</dd>
+        </div>
+        <div class="reveal">
+          <dt class="h3">Is two weeks of water really in there?</dt>
+          <dd class="body">No, and no pack honestly can be. Two weeks of water for four people weighs over 450 pounds. Each Ration case holds sealed water for the first three days. The Core holds a filter and carriers for the rest, and the Water store module adds four tanks.</dd>
+        </div>
+        <div class="reveal">
+          <dt class="h3">What if I never use it?</dt>
+          <dd class="body">Then it did its job. So did your smoke alarm.</dd>
+        </div>
+        <div class="reveal">
+          <dt class="h3">What if my household changes?</dt>
+          <dd class="body">Add a Ration case. One more person is one more case, and it stacks with the rest.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 9. Close -->
+  <section class="section close">
+    <div class="wrap close-in">
+      <h2 class="h1">Prepped. Always<span class="stop">.</span></h2>
+      <a class="btn btn-main" href="build.html">Build your pack</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <a class="mark" href="index.html">Prepped<span class="stop">.</span></a>
+    <p class="small">A concept preview. Prices and contents are placeholders.</p>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="case.js"></script>
+<script src="home.js"></script>
+</body>
+</html>
