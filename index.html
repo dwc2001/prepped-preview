@@ -20,6 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem("prepped-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="home.css">
 <script>document.documentElement.classList.add("js");</script>
@@ -33,6 +34,7 @@
       <a href="#inside">The pack</a>
       <a href="#modules">Modules</a>
       <a href="#sizes">Sizes</a>
+      <button type="button" class="btn btn-quiet btn-small bar-theme" id="theme-btn" aria-label="Switch to dark mode"></button>
       <button type="button" class="btn btn-quiet btn-small bar-menu" id="bar-menu" aria-label="Menu" aria-expanded="false" aria-controls="bar-sheet"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 7h14M3 13h14"/></svg></button>
       <a class="btn btn-main btn-small" href="build.html">Build your pack</a>
     </nav>
@@ -41,6 +43,7 @@
     <a href="#inside">The pack</a>
     <a href="#modules">Modules</a>
     <a href="#sizes">Sizes</a>
+    <button type="button" class="bar-theme-row" id="theme-row" role="switch" aria-checked="false"><span>Dark mode</span><span class="switch" aria-hidden="true"></span></button>
   </div>
 </header>
 

@@ -38,3 +38,43 @@
   }, { passive: true });
   mark();
 })();
+
+/* Light and dark. Follows the device until the person picks one; the pick is remembered. */
+(function () {
+  var root = document.documentElement;
+  var btn = document.getElementById("theme-btn");
+  var row = document.getElementById("theme-row");
+  var system = window.matchMedia("(prefers-color-scheme: dark)");
+  var SUN = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="10" cy="10" r="3.4"/><path d="M10 2.2v1.9M10 15.900v1.900M2.200 10h1.900M15.900 10h1.900M4.500 4.500l1.300 1.300M14.200 14.200l1.300 1.300M4.500 15.500l1.300-1.300M14.200 5.800l1.300-1.300"/></svg>';
+  var MOON = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.500 11.600A6.800 6.800 0 0 1 8.400 3.500a6.800 6.800 0 1 0 8.100 8.100z"/></svg>';
+
+  function isDark() {
+    var t = root.getAttribute("data-theme");
+    return t ? t === "dark" : system.matches;
+  }
+  function paint() {
+    var dark = isDark();
+    if (btn) {
+      btn.innerHTML = dark ? SUN : MOON;
+      btn.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+    }
+    if (row) row.setAttribute("aria-checked", dark ? "true" : "false");
+    var bg = getComputedStyle(root).getPropertyValue("--page").trim();
+    Array.prototype.forEach.call(document.querySelectorAll('meta[name="theme-color"]'), function (m) {
+      m.setAttribute("content", bg);
+    });
+  }
+  function flip() {
+    var next = isDark() ? "light" : "dark";
+    root.classList.add("theme-fade");
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("prepped-theme", next); } catch (e) {}
+    paint();
+    setTimeout(function () { root.classList.remove("theme-fade"); }, 280);
+  }
+  if (btn) btn.addEventListener("click", flip);
+  if (row) row.addEventListener("click", flip);
+  if (system.addEventListener) system.addEventListener("change", paint);
+  new MutationObserver(paint).observe(root, { attributes: true, attributeFilter: ["data-theme"] });
+  paint();
+})();
