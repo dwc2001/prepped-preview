@@ -208,8 +208,8 @@ img, svg { display: block; max-width: 100%; }
 [aria-checked="true"] > .switch::after { transform: translateX(20px); }
 
 /* Light and dark: an icon button in the bar on a computer, a switch in the menu on a phone */
-.bar-theme { width: 44px; padding: 0; }
-.bar-theme svg { width: 20px; height: 20px; }
+.bar-theme { flex: 0 0 44px; width: 44px; padding: 0; }
+.bar-theme svg { flex: none; width: 20px; height: 20px; max-width: none; }
 .bar-theme-row { display: none; }
 .theme-fade, .theme-fade *, .theme-fade *::before, .theme-fade *::after {
   transition: background-color 240ms ease, color 240ms ease, border-color 240ms ease, box-shadow 240ms ease !important;
@@ -355,7 +355,8 @@ img, svg { display: block; max-width: 100%; }
     -webkit-tap-highlight-color: transparent; touch-action: manipulation;
   }
   .bar-menu { display: inline-flex; width: 44px; padding: 0; }
-  .bar-menu svg { width: 20px; height: 20px; }
+  .bar-menu { flex: 0 0 44px; }
+  .bar-menu svg { flex: none; width: 20px; height: 20px; max-width: none; }
   .bar-sheet {
     display: grid; position: absolute; left: 0; right: 0; top: 100%;
     background: var(--page); border-bottom: 1px solid var(--hairline); box-shadow: var(--shadow);
