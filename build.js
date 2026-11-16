@@ -300,6 +300,7 @@
     wrap.addEventListener("click", function (e) { if (e.target === wrap) closeDialog(); });
 
     dlg = { root: root, card: card, body: body };
+    if (window.PreppedSheet) window.PreppedSheet.attach(card, scrim, closeDialog);
     showForm();
     lock();
     document.addEventListener("keydown", onKey, true);

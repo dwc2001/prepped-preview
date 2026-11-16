@@ -4,7 +4,7 @@
 .hero { padding: var(--s20) 0 var(--s24); }
 .hero-in { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.85fr); gap: var(--s12); align-items: end; }
 .hero-words { display: grid; gap: var(--s6); justify-items: start; padding-bottom: var(--s6); }
-.hero .h1 { font-size: clamp(42px, 6vw, 80px); }
+.hero .h1 { font-size: clamp(2.625rem, 6vw, 5rem); }
 .hero-go { display: flex; flex-wrap: wrap; gap: var(--s3); margin-top: var(--s2); }
 
 /* The pack on its shelf, seen from the front */
@@ -87,11 +87,13 @@ a.row:active { opacity: 0.6; transition-duration: 60ms; }
 .close-in { display: grid; gap: var(--s10); justify-items: start; }
 
 @media (max-width: 767px) {
-  .hero { padding: var(--s10) 0 var(--s16); }
-  .hero-in { grid-template-columns: minmax(0, 1fr); gap: var(--s12); }
+  .hero { padding: var(--s6) 0 var(--s16); }
+  .hero-in { grid-template-columns: minmax(0, 1fr); gap: var(--s8); }
+  .hero-words { gap: var(--s4); }
   .hero-words { padding-bottom: 0; }
   .hero-go { width: 100%; }
-  .hero-go .btn { flex: 1 1 auto; }
+  .hero-go { flex-wrap: nowrap; gap: var(--s2); margin-top: var(--s1); }
+  .hero-go .btn { flex: 1 1 0; padding: 0 var(--s3); white-space: nowrap; }
   .stack { justify-self: center; max-width: 340px; }
   .box { height: 92px; }
   .box::before { top: 30px; }
