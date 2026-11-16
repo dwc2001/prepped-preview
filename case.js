@@ -2,7 +2,7 @@
 
    var pack = PreppedPack.mount(el, { people: 2, addons: [], onPick: fn });
    pack.set({ people: 3 });               change household size (1 to 4)
-   pack.set({ addons: ["pets", "comms"] }) show add-on modules docked under the pack
+   pack.set({ addons: ["pets", "comms"] }) fill those add-on slots under the pack
    pack.pick(null)                         clear the picked module
 
    onPick(module) is called with { id, name, line, items, kind } when a module
@@ -56,17 +56,28 @@
       days.setAttribute("aria-hidden", "true");
       for (var d = 0; d < 14; d++) days.appendChild(el("span"));
       t.appendChild(days);
-      t.appendChild(el("div", "sip", "Water, 3 days"));
+      var sip = el("div", "sip");
+      sip.appendChild(el("span", "", "Water"));
+      sip.appendChild(el("span", "", "3 days"));
+      t.appendChild(sip);
       r.appendChild(t);
       row.appendChild(r);
       rations.push(r);
     }
 
-    /* Add-on modules dock under the pack */
+    /* Add-on modules: six fixed slots under the pack, filled when chosen */
     var dock = el("div", "dock");
     var addonEls = {};
     if (opts.dock !== false) {
       root.appendChild(dock);
+      P.addons.forEach(function (a) {
+        var t = makeTile({ id: a.id, name: a.name, line: a.line, items: a.items }, "addon", "addon-" + a.id, true);
+        t.classList.add("addon", "is-off");
+        t.appendChild(el("b", "", a.name));
+        t.appendChild(el("i", "", a.perPerson ? "One per person" : "One per pack"));
+        dock.appendChild(t);
+        addonEls[a.id] = t;
+      });
     }
 
     function makeTile(m, kind, key, bare) {
@@ -114,24 +125,9 @@
       }
       if (opts.dock === false) return;
       P.addons.forEach(function (a) {
-        var want = state.addons.indexOf(a.id) !== -1;
-        var node = addonEls[a.id];
-        if (want && !node) {
-          node = el("div", "unit addon is-out");
-          var t = makeTile({ id: a.id, name: a.name, line: a.line, items: a.items }, "addon", "addon-" + a.id, true);
-          t.appendChild(el("b", "", a.name));
-          t.appendChild(el("i", "", a.perPerson ? "One per person" : "One per pack"));
-          t.setAttribute("aria-label", a.name + " add-on module");
-          node.appendChild(t);
-          dock.appendChild(node);
-          addonEls[a.id] = node;
-          requestAnimationFrame(function () { requestAnimationFrame(function () { node.classList.remove("is-out"); }); });
-        } else if (!want && node) {
-          if (state.picked === "addon-" + a.id) pick(null);
-          tiles = tiles.filter(function (t) { return t.key !== "addon-" + a.id; });
-          node.remove();
-          delete addonEls[a.id];
-        }
+        var on = state.addons.indexOf(a.id) !== -1;
+        addonEls[a.id].classList.toggle("is-off", !on);
+        addonEls[a.id].setAttribute("aria-label", a.name + " module, " + (on ? "in your pack" : "not added"));
       });
     }
 

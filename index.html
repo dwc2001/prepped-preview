@@ -4,6 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232B2E26'/%3E%3Cpath d='M18 46V18h13c6.5 0 10.500 3.800 10.500 9.500S37.500 37 31 37h-6v9z M25 31h5.500c2.500 0 4-1.300 4-3.500s-1.500-3.500-4-3.500H25z' fill='%23EFECE2' fill-rule='evenodd'/%3E%3Crect x='44' y='39' width='7' height='7' fill='%23F2703F'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Prepped.">
+<meta property="og:title" content="Prepped. Hopefully never. Ready always.">
+<meta property="og:description" content="Two weeks of food, water and supplies for everyone in your home, packed in one set of cases.">
+<meta property="og:image" content="https://dwc2001.github.io/prepped-preview/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <title>Prepped. Hopefully never. Ready always.</title>
 <meta name="description" content="Two weeks of food, water and supplies for everyone in your home, packed in one set of cases.">
 <meta name="theme-color" content="#F3F0E8" media="(prefers-color-scheme: light)">
@@ -24,8 +33,14 @@
       <a href="#inside">The pack</a>
       <a href="#modules">Modules</a>
       <a href="#sizes">Sizes</a>
+      <button type="button" class="btn btn-quiet btn-small bar-menu" id="bar-menu" aria-label="Menu" aria-expanded="false" aria-controls="bar-sheet"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 7h14M3 13h14"/></svg></button>
       <a class="btn btn-main btn-small" href="build.html">Build your pack</a>
     </nav>
+  </div>
+  <div class="bar-sheet" id="bar-sheet">
+    <a href="#inside">The pack</a>
+    <a href="#modules">Modules</a>
+    <a href="#sizes">Sizes</a>
   </div>
 </header>
 
@@ -121,9 +136,8 @@
           <dd class="lead">of shelf life on every meal. Nothing to rotate, nothing to remember.</dd>
         </div>
         <div class="fact reveal">
-          <dt class="h2 num">11 hours</dt>
-          <dd class="lead">is how long the average American home went without power in 2024, the most in ten years. Most outages are short. A few are not.
-            <span class="small fact-source">US Energy Information Administration, 2025</span></dd>
+          <dt class="h2 num">1 shelf</dt>
+          <dd class="lead">is all it takes. The cases stack on the footprint of a storage tote.</dd>
         </div>
       </dl>
     </div>
@@ -142,7 +156,7 @@
   </section>
 
   <!-- 6. It looks after itself -->
-  <section class="section">
+  <section class="section band">
     <div class="wrap keep">
       <div class="section-head">
         <h2 class="h2">It looks after itself<span class="stop">.</span></h2>
@@ -195,7 +209,7 @@
   </section>
 
   <!-- 9. Close -->
-  <section class="section close">
+  <section class="section band close">
     <div class="wrap close-in">
       <h2 class="h1">Prepped. Always<span class="stop">.</span></h2>
       <a class="btn btn-main" href="build.html">Build your pack</a>
@@ -206,13 +220,23 @@
 
 <footer class="foot">
   <div class="wrap foot-in">
-    <a class="mark" href="index.html">Prepped<span class="stop">.</span></a>
-    <p class="small">A concept preview. Prices and contents are placeholders.</p>
+    <div class="foot-brand">
+      <a class="mark" href="index.html">Prepped<span class="stop">.</span></a>
+      <p class="body">Hopefully never. Ready always.</p>
+    </div>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="#inside">The pack</a>
+      <a href="#sizes">Sizes</a>
+      <a href="#modules">Modules</a>
+      <a href="build.html">Build your pack</a>
+    </nav>
+    <p class="small foot-note">A concept preview. Prices and contents are placeholders.</p>
   </div>
 </footer>
 
 <script src="data.js"></script>
 <script src="case.js"></script>
 <script src="home.js"></script>
+<script src="nav.js"></script>
 </body>
 </html>

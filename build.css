@@ -18,18 +18,6 @@
 .build .pack[data-people] .unit-core { transform: none; }
 .build .unit-core .tiles { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
-/* The dock keeps its room, so adding a module never moves the page */
-.build .dock { min-height: 98px; }
-.build .dock:empty {
-  display: grid; place-items: center;
-  grid-template-columns: 1fr;
-  border: 1px dashed var(--hairline); border-radius: var(--r-l);
-}
-.build .dock:empty::before {
-  content: "Add-on modules sit here.";
-  font-size: var(--t-small); color: var(--text-3);
-}
-
 /* What is in the tapped module */
 .build-inside { min-height: 120px; }
 .inside-kind { color: var(--text-3); }
@@ -172,8 +160,6 @@
   .step-addons { order: 4; }
   .step-sum { order: 5; }
 
-  .build .dock { grid-template-columns: repeat(3, minmax(0, 1fr)); min-height: 0; }
-  .build .dock:empty { min-height: 96px; }
 
   /* The total and Reserve live in the bottom bar on a phone */
   .sum-total, .sum-reserve { display: none; }

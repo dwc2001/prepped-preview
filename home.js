@@ -100,16 +100,29 @@
     sizeRows.appendChild(li);
   });
 
-  /* Sections rise once as you reach them */
-  var items = document.querySelectorAll(".reveal");
-  if (!("IntersectionObserver" in window)) {
-    Array.prototype.forEach.call(items, function (n) { n.classList.add("is-in"); });
-  } else {
+  /* Sections rise once as you reach them. Two triggers, so nothing can stay hidden:
+     the observer, and a plain position check on scroll. */
+  var waiting = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+  function show(n) {
+    n.classList.add("is-in");
+    waiting = waiting.filter(function (x) { return x !== n; });
+    if (!waiting.length) window.removeEventListener("scroll", check);
+  }
+  function check() {
+    var line = window.innerHeight * 0.92;
+    waiting.slice().forEach(function (n) {
+      if (n.getBoundingClientRect().top < line) show(n);
+    });
+  }
+  window.addEventListener("scroll", check, { passive: true });
+  window.addEventListener("resize", check);
+  if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
-        if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); }
+        if (en.isIntersecting) { show(en.target); io.unobserve(en.target); }
       });
     }, { rootMargin: "0px 0px -8% 0px" });
-    Array.prototype.forEach.call(items, function (n) { io.observe(n); });
+    waiting.forEach(function (n) { io.observe(n); });
   }
+  check();
 })();
